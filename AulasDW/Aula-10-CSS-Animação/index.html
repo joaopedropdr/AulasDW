@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animação</title>
+    <style>
+        .box{
+            height: 200px;
+            width: 200px;
+        }
+        .louqinho{
+            background-color: red;
+            animation-name: loucura;
+            animation-duration: 2s;
+            animation-timing-function: ease; 
+            animation-iteration-count: infinite; 
+
+        }
+
+        .easein {
+            animation: loucura 2s ease-in;
+            background: purple;
+            animation-iteration-count: infinite;
+            border-radius: 50%;
+        }
+
+        .easein:hover {
+            border: 1px solid green;
+            border-radius: 0;
+            transition: ease-in-out;
+            transition-timing-function: 1s;
+        }
+
+        .easeout{
+            animation: correr 2s ease-out;
+            background: green;
+            animation-iteration-count: infinite;
+            animation-delay: 1s;
+        }
+
+        .easeinout{
+            border-radius: 100%;
+            animation: correr 2s ease-in-out;
+            background: black;
+            animation-iteration-count: infinite;
+            animation-delay: 2s;
+        }
+
+        @keyframes correr{
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(500px);
+            }
+        }
+
+        @keyframes loucura {
+            0% {
+                transform: translateX(0) scale(2);
+                
+            }
+
+            25% {
+                transform: translateX(calc(100vw - 200px)) rotate(90deg);
+            }
+
+            50% {
+                transform: translateX(0, calc(100vh - 200px)) rotate(180deg);
+            }
+
+            100% {
+                transform: translateX(calc(100vw - 200px), calc(100vh - 200px)) scale(0.5);
+                
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    
+    <div class="box louqinho">
+
+    </div>
+
+    <div class="box louquinho easein"></div>
+    <div class="box louquinho easeinout"></div>
+    <div class="box louquinho easeout"></div>
+
+
+    
+</body>
+</html>
